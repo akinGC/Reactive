@@ -1,16 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Exp from './components/Exp';
 
 function App() {
+  let obj=[
+    {
+      item:'Food Rs10',
+      place:'New Delhi'
+    },
+    {
+      item:'Food Rs100',
+      place:'Moscow'
+    },
+    {
+      item:'Food Rs200',
+      place:'LA'
+    }
+  ]
   return (
     <div className="App">
     <h1>Expense Items</h1>
+   <Exp obj={obj}/>
 
-<h4>Food Rs 10 - <span className="LocationOfExpenditure ">New delhi</span></h4>
-
-<h4>Petrol Rs 100 - <span className="LocationOfExpenditure ">Moscow</span></h4>
-
-<h4>Movies Rs 200 - <span className="LocationOfExpenditure ">LA</span></h4>
     </div>
   );
 }
