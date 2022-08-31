@@ -6,17 +6,21 @@ function App() {
   let obj=[
     {
       item:'Food Rs10',
-      place:'New Delhi'
+      place:'New Delhi',
+      date:new Date()
     },
     {
       item:'Food Rs100',
-      place:'Moscow'
+      place:'Moscow',
+      date:new Date()
     },
     {
       item:'Food Rs200',
-      place:'LA'
+      place:'LA',
+      date:new Date()
     }
   ]
+ 
   return (
     <div className="App">
     <h1>Expense Items</h1>
