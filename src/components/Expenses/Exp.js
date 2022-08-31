@@ -1,7 +1,8 @@
 import ExpDate from "./ExpDate"
-function Exp(props) {
+const Exp=(props)=> {
 
     return(
+       
         <div className="whole">
              {props.obj.map((user,key) => (
                 

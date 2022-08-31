@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Exp from './components/Exp';
+import Exp from './components/Expenses/Exp';
 
 function App() {
   let obj=[
