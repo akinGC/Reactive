@@ -24,7 +24,14 @@ function App() {
   return (
     <div className="App">
     <h1>Expense Items</h1>
-   <Exp obj={obj}/>
+    {
+      obj.map((user)=>
+      (
+         <Exp obj={user}/>
+      )
+      )
+    }
+ 
 
     </div>
   );

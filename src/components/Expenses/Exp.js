@@ -1,5 +1,11 @@
 import ExpDate from "./ExpDate"
+import {useState} from 'react'
 const Exp=(props)=> {
+
+const [amt,srAmt]= useState(props.obj.item)
+  const updateExp=()=>{
+srAmt('updated!')
+  }
 const zig=(e)=>{
  
   e.target.parentElement.remove()
@@ -7,15 +13,17 @@ const zig=(e)=>{
     return(
        
         <div className="whole">
-             {props.obj.map((user,key) => (
+            
                 
-        <div className="user"key={key}>
-          <h5>{user.item}&nbsp;<span>{user.place}</span>
-    <span><ExpDate date={user.date}></ExpDate></span>
+        <div className="user">
+          <h5>{amt}&nbsp;<span>{props.obj.place}</span>
+    <span><ExpDate date={props.obj.date}></ExpDate></span>
           </h5>
-          <button onClick={zig}>click</button>
+          <button onClick={updateExp}>Exp</button>
+          <button onClick={zig}>Delete</button>
+          
         </div>
-      ))}
+      
         </div>
     )
 }
