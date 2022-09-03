@@ -1,10 +1,24 @@
-import { Fragment, useState } from "react"
+import { Fragment, Suspense, useState } from "react"
+import App from "../../App"
 
-const Form=()=>{
+const Form=(props)=>{
+    // console.log(props.obj[0])
+    const [objj,seObjj]=useState(props.obj)
+    // console.log(objj[0])
+
+    function add(e){
+        e.preventDefault()
+        
+        console.log(state)
+        setState({ title:'',
+        amt:'',
+        date:new Date('')})
+        
+    }
     const [state,setState] = useState({
         title:'',
         amt:'',
-        date:new Date()
+        date:new Date('')
     })
 function chngd(e){
 
@@ -25,10 +39,10 @@ switch (e.target.name) {
     return(
         <Fragment>
 <form className="formg">
-<input type="text"placeholder="EXP title"name="title" onChange={chngd}></input>
-<input type="text"placeholder="exp amt"name="amount" onChange={chngd}></input>
-<input type="date" onChange={chngd} name="date"></input>
-<button>Add</button>
+<input type="text"placeholder="EXP title"name="title"value={state.title} onChange={chngd}></input>
+<input type="text"placeholder="exp amt"name="amount"value={state.amt} onChange={chngd}></input>
+<input type="date" onChange={chngd} name="date"value={state.date}></input>
+<button onClick={add}>Add</button>
 </form>
         </Fragment>
     )

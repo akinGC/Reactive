@@ -25,7 +25,7 @@ function App() {
   return (
     
     <div className="App">
-      <Form/>
+      <Form obj={obj}/>
     <h1>Expense Items</h1>
     {
       obj.map((user)=>
