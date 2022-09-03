@@ -2,33 +2,43 @@ import logo from './logo.svg';
 import './App.css';
 import Exp from './components/Expenses/Exp';
 import Form from './components/Expenses/Form';
+import { useState } from 'react';
 
 function App() {
   let obj=[
     {
-      item:'Food Rs10',
-      place:'New Delhi',
+      title:'Food Rs10',
+      amt:'New Delhi',
       date:new Date()
     },
     {
-      item:'Food Rs100',
-      place:'Moscow',
+      title:'Food Rs100',
+      amt:'Moscow',
       date:new Date()
     },
     {
-      item:'Food Rs200',
-      place:'LA',
+      title:'Food Rs200',
+      amt:'LA',
       date:new Date()
     }
   ]
- 
+const [trio,setTrio]=useState(obj)
+// console.log(trio)
+ function runUpdate(e){
+  const newObj={
+    ...e,
+    id:'123'
+  }
+  console.log(newObj)
+  setTrio([...trio,newObj])
+ }
   return (
     
     <div className="App">
-      <Form obj={obj}/>
+      <Form returned = {runUpdate}/>
     <h1>Expense Items</h1>
     {
-      obj.map((user)=>
+      trio.map((user)=>
       (
          <Exp obj={user}/>
       )

@@ -3,13 +3,14 @@ import App from "../../App"
 
 const Form=(props)=>{
     // console.log(props.obj[0])
-    const [objj,seObjj]=useState(props.obj)
+  
     // console.log(objj[0])
 
     function add(e){
         e.preventDefault()
-        
-        console.log(state)
+        props.returned(state)
+        // console.log(state)
+       
         setState({ title:'',
         amt:'',
         date:new Date('')})
