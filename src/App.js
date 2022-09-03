@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Exp from './components/Expenses/Exp';
+import Form from './components/Expenses/Form';
 
 function App() {
   let obj=[
@@ -22,7 +23,9 @@ function App() {
   ]
  
   return (
+    
     <div className="App">
+      <Form/>
     <h1>Expense Items</h1>
     {
       obj.map((user)=>

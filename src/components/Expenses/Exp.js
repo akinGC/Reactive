@@ -5,6 +5,7 @@ const Exp=(props)=> {
 const [amt,srAmt]= useState(props.obj.item)
   const updateExp=()=>{
 srAmt('updated!')
+console.log(amt)
   }
 const zig=(e)=>{
  
