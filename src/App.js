@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Exp from './components/Expenses/Exp';
 import Form from './components/Expenses/Form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
-  let obj=[
+
+  const [obj,setObj]=useState([
     {
       title:'Food Rs10',
       amt:'New Delhi',
@@ -21,31 +22,50 @@ function App() {
       amt:'LA',
       date:new Date()
     }
-  ]
-const [trio,setTrio]=useState(obj)
-// console.log(trio)
+  ])
+  const [newval,setnewval]=useState('--select--')
+
+
  function runUpdate(e){
   const newObj={
     ...e,
     id:'123'
   }
-  console.log(newObj)
-  setTrio([...trio,newObj])
+ setObj([...obj,newObj])
  }
+
+
+
+
+ const filteredExpnses = obj.filter((expense) => {
+ 
+  return new Date(expense.date).getFullYear().toString() === newval;
+});
   return (
     
     <div className="App">
       <Form returned = {runUpdate}/>
     <h1>Expense Items</h1>
+    <label for="sel">Filter</label>
+    <select name='sel' onChange={(e)=>{setnewval(e.target.value)}}>
+      <option>--select--</option>
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+    </select>
     {
-      trio.map((user)=>
-      (
-         <Exp obj={user}/>
-      )
-      )
-    }
- 
-
+      (newval == '--select--')?
+          obj.map((user)=>
+          (
+             <Exp obj={user}/>
+          )
+          ):filteredExpnses.map((user)=>
+          (
+             <Exp obj={user}/>
+          )
+          )
+        }
+      
     </div>
   );
 }

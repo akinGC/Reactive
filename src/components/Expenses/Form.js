@@ -1,25 +1,23 @@
-import { Fragment, Suspense, useState } from "react"
+import { Fragment, useState } from "react"
 import App from "../../App"
 
 const Form=(props)=>{
-    // console.log(props.obj[0])
-  
-    // console.log(objj[0])
+    
 
     function add(e){
         e.preventDefault()
         props.returned(state)
-        // console.log(state)
+     
        
         setState({ title:'',
         amt:'',
-        date:new Date('')})
+        date:new Date()})
         
     }
     const [state,setState] = useState({
         title:'',
         amt:'',
-        date:new Date('')
+        date:new Date()
     })
 function chngd(e){
 
