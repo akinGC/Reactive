@@ -1,0 +1,41 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.listouter{
+    background-color: grey;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 1vh;
+}
+.listdate{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    text-align: center;
+    margin: 3px;
+    border-radius: 5px;
+    width: 7vw;
+    padding: 3px;
+    background-color: black;
+}
+
+.listtexts{
+    display: flex;
+  
+    width: 50vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2px;
+    font-weight: 700;
+}
+.amtdisplyd{
+    background-color: blueviolet;
+    height: 5vh;
+    min-width: 5vw;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
