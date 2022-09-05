@@ -7,6 +7,7 @@ import Obj from './mistry/Obj';
 import FrmPart from './Expense app/FrmPart';
 import FrmCard from './Expense app/FrmCard';
 import Show from './Expense app/Show';
+import Chart from './Expense app/Chart';
 
 function App() {
 
@@ -31,7 +32,17 @@ function App() {
   const filterval = obj.filter((end)=>{
     return new Date(end.date).getFullYear().toString()==sel
   })
-console.log(filterval)
+  let poinArry = [0,0,0,0,0,0,0,0,0,0,0,0]
+ 
+  if(filterval.length!=0){
+    // console.log(filterval[0].date.getMonth())
+    for (let i = 0; i < filterval.length; i++) {
+          let monnum = new Date(filterval[i].date).getMonth()
+          poinArry[monnum]=poinArry[monnum]+1
+    }
+
+  }
+// console.log(filterval[0].date.getMonth())
 function updated(e){
   setObj([...obj,e])
   
@@ -51,6 +62,7 @@ function vat(e){
       }
  
   <div className='outblkCard'>
+    <Chart ary={poinArry}/>
     <div className='outflt'>
       <div className='outfltin'>
         <span>Filter by year</span>

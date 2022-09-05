@@ -1,6 +1,7 @@
 import './Show.css'
 function Show(props){
-    (props.obj==null)?console.log(true):console.log(false)
+
+   
     return(
         <>
         <div className='listouter'>
